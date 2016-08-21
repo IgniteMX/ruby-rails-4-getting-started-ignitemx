@@ -1,18 +1,45 @@
-<div class="media">
-    <div class="lead well">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/350/150" alt="Placeholder-image">
-        </a>
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+  <div class="media">
+      <div class="lead well">
+        <div class="media-left media-top">
+          <a href="<%= @question.id %>">
+            <img class="media-object" src="<%= @question.gravatar %>" alt="Gravatar">
+          </a>
+        </div>
+        <div class="media-body">
+        <div class="panel panel-body"><%= @question.body %></div>
+        </div>
       </div>
-      <div class="media-body">
-        <h4 class="media-heading">Irony butcher?</h4>
-        Vegan biodiesel yr swag, aesthetic cronut before they sold out vinyl flannel kombucha. Try-hard knausgaard synth, sartorial lo-fi vegan XOXO humblebrag art party skateboard locavore venmo tofu cray. Blue bottle selfies cronut cray slow-carb kogi?
-      </div>
-    </div>
+  </div>
+  
+        <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+        <div class="label label-default">Asked <%= time_ago_in_words @question.created_at %> ago</div>
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button>
+    <%= render 'home/new_answer_form' %>
+
+  </div>
 </div>
 
 <ul class="media-list">
+  <% @answers.each do |a| %>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="<%= a.gravatar %>" alt="Placeholder-image">
+      </a>
+    </div>
+    <div class="media-body">
+      <div class="well"><%= a.body %></div>
+        <div class="label label-default">Posted <%= time_ago_in_words a.created_at %> ago</div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+
+<!-- <ul class="media-list">
   <li class="media">
     <div class="media-left">
       <a href="#">
@@ -20,7 +47,8 @@
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">Messenger bag</h4>
+      <h4 class="media-heading"></h4>
+      
       Biodiesel mlkshk brunch salvia waistcoat, typewriter readymade. Gluten-free williamsburg mixtape, freegan VHS jean shorts tofu bitters whatever artisan ethical semiotics post-ironic viral chartreuse. Biodiesel gastropub occupy four dollar toast godard trust fund swag, authentic craft beer mixtape.
     </div>
   </li>
@@ -49,6 +77,6 @@
 </ul>
 
 <div>
-    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button>
-    <%= render 'home/new_answer_form' %>
+-->
+
 </div>

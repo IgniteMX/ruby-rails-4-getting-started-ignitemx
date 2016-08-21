@@ -10,17 +10,17 @@
   <%= form_for :question, url: '/questions', html: { class: 'form-horizontal' } do %>
     <div class="modal-body">
       <div class="input-group input-group-lg">
-        <!--<span class="input-group-addon" id="sizing-addon1">Email</span>
-        <input name="email" type="email" class="form-control" placeholder="Your email address" aria-describedby="sizing-addon1">-->
-      Email <%= email_field(:user, :email) %>
+        <span class="input-group-addon" id="sizing-addon1">Email</span>
+        <input name="question[email]" type="email" class="form-control" placeholder="Your email address" aria-describedby="sizing-addon1">
+      <!-- Email <%= email_field(:user, :email) %> -->
       </div>
       
       <br>
       
       <div class="input-group input-group-lg">
-        <!--<span class="input-group-addon" id="sizing-addon1">Question</span>
-        <textarea name="question" class="form-control" placeholder="What would you like to know" aria-describedby="sizing-addon1"></textarea>-->
-      Question <%= text_field(:data, :question) %>
+        <span class="input-group-addon" id="sizing-addon1">Question</span>
+        <textarea name="question[body]" class="form-control" placeholder="What would you like to know?" aria-describedby="sizing-addon1"></textarea>
+      <!-- Question <%= text_field(:data, :question) %> -->
       </div>
       
             </div>

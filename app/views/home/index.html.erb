@@ -1,26 +1,25 @@
-<h1>Welcome!</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>Have something that you just must know? Well...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Ask a question</a></p>
+</div>
 
 <ul class="media-list">
     <% @questions.each do |q| %>
-  <li class="media">
-      <a href="#">
-    <div class="media">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" src="<%= q.gravatar %>" alt="...">
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><%= q.email %> asked:</h4>
-      <%= q.body %>
-      <div class="well"><%= time_ago_in_words q.created_at %> ago</div>
-    </div>
-    </div>
-  </li>
+    <li class="media">
+        <a href="#">
+      <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="<%= q.gravatar %>" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <div class="well"><%= q.body %></div>
+        <div class="label label-default">Asked <%= time_ago_in_words q.created_at %> ago</div>
+        <a href="<%= question_path(q) %>" class="btn btn-success btn-xs btn-right">View Answers</a>
+      </div>
+      </div>
+    </li>
     <% end %>
 </ul>
-
-<div>
-    <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-</div>
