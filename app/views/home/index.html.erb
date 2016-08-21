@@ -1,0 +1,26 @@
+<h1>Welcome!</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<ul class="media-list">
+    <% @questions.each do |q| %>
+  <li class="media">
+      <a href="#">
+    <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="<%= q.gravatar %>" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= q.email %> asked:</h4>
+      <%= q.body %>
+      <div class="well"><%= time_ago_in_words q.created_at %> ago</div>
+    </div>
+    </div>
+  </li>
+    <% end %>
+</ul>
+
+<div>
+    <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
+</div>
