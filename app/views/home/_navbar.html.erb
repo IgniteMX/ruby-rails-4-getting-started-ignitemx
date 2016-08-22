@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="background-color: #000000;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,13 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ruby on Rails 4: Getting Started</a>
+      <a class="navbar-brand" href="..">Ruby on Rails 4: Getting Started</a>
 </div>
 
 <div class="btn-group navbar-right" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Sign In</button>
-  <button type="button" class="btn btn-default">About</button>
-  <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#myModal">Ask a Question</button>
+
+  <%=
+  if current_user_email
+    raw('<button type="button" class="btn btn-success">' + current_user_email + '</button>')
+  else
+    raw('<button type="button" class="btn btn-success">Sign In</button>')
+  end
+  %>
+  <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#AskAQuestionForm">Ask a Question</button>
 </div>
 
         </div><!-- /.navbar-collapse -->

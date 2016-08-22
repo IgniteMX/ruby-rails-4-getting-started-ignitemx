@@ -1,10 +1,10 @@
 <!-- modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="AskAQuestionForm" tabindex="-1" role="dialog" aria-labelledby="AskAQuestionForm">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Ask a New Question</h4>
+        <h4 class="modal-title" id="AskAQuestionModal">Ask a New Question</h4>
       </div>
 <!-- modalForm -->
   <%= form_for :question, url: '/questions', html: { class: 'form-horizontal' } do %>
